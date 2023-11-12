@@ -28,4 +28,4 @@ tset automatic-rename-format "#{b:pane_current_path}"
 
 # Sensible window numbering
 tset base-index 1
-tset renumber-windows-on
+tset renumber-windows on
