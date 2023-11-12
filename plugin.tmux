@@ -26,5 +26,6 @@ tset window-status-current-style "bright"
 tset automatic-rename on
 tset automatic-rename-format "#{b:pane_current_path}"
 
-# Start window numbering from 1
+# Sensible window numbering
 tset base-index 1
+tset renumber-windows-on
