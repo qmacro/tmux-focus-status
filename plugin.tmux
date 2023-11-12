@@ -29,3 +29,6 @@ tset automatic-rename-format "#{b:pane_current_path}"
 # Sensible window numbering
 tset base-index 1
 tset renumber-windows on
+
+# Given vim's status line at the bottom, put this status line at the top
+tset status-position top
