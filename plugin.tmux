@@ -12,4 +12,5 @@ tmux set-option -g status-right ""
 tmux set-option -g status-justify right
 tmux set-option -g status-style "fg=grey,bg=terminal"
 tmux set-option -g window-status-style "dim"
+tmux set-option -g window-status-current-style "bright"
 tmux set-option -g status-left "#(head -1 "$(focus_status_file)" 2> /dev/null)"
