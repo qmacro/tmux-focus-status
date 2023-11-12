@@ -7,10 +7,24 @@ focus_status_file() {
     echo "${value:-$default}"
 }
 
-tmux set-option -g status-left-length 100
-tmux set-option -g status-right ""
-tmux set-option -g status-justify right
-tmux set-option -g status-style "fg=grey,bg=terminal"
-tmux set-option -g window-status-style "dim"
-tmux set-option -g window-status-current-style "bright"
-tmux set-option -g status-left "#(head -1 "$(focus_status_file)" 2> /dev/null)"
+tset() {
+    tmux set-option -g "$@"
+}
+
+# Focus status text on left, window info on right
+tset status-left "#(head -1 "$(focus_status_file)" 2> /dev/null)"
+tset status-left-length 100
+tset status-right ""
+tset status-justify right
+
+# Simple styling, current window is highlighted
+tset status-style "fg=grey,bg=terminal"
+tset window-status-style "dim"
+tset window-status-current-style "bright"
+
+# Window names reflect current dir there
+tset automatic-rename on
+tset automatic-rename-format "#{b:pane_current_path}"
+
+# Start window numbering from 1
+tset base-index 1
